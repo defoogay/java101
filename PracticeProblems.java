@@ -4,6 +4,8 @@
 //Write a function called sumGrid that takes a 2d double array grid and returns the sum of all the elements. Hint: you can do this with nested for loops (look up what that is).
 //Write a function called fib that takes an integer n and returns the nth number in the fibonacci sequence (starting with 0 1).
 
+import java.math.BigInteger;
+
 public class PracticeProblems {
     public static int[][] twoArr = {{12,13,14}, {22, 23, 24}, {32, 33, 34}};
     public static int[] arrA = {1, 2, 1, 3, 1, 4, 2, 3, 4, 5, 6};
@@ -37,33 +39,33 @@ public class PracticeProblems {
         }
         public static int sumGrid(int[][] arr) {
             int numberHolder = 0;
-            for(int i = 2; i < arr.length; i++) {
+            for(int i = 0; i < arr.length; i++) {
                 for(int x = 0; x < arr.length; x++) {
                     numberHolder += arr[i][x];
                 }
             }
             return numberHolder;
         }
-        public static int fib(int x) {
-            if(x == 0) {
-                return 0;
-            }
-            else if(x == 1) {
-                return 1;
-            }
-            int prevNum1 = 0;
-            int prevNum2 = 1;
-            for(int i = 2; i <= x; i++) {
-                int fibNum = prevNum1 + prevNum2;
-                prevNum1 = prevNum2;
-                prevNum2 = fibNum;
-            }
-            return prevNum2;
+    public static BigInteger fib(int n) {
+        if (n == 0) {
+            return BigInteger.ZERO;
+        } else if (n == 1) {
+            return BigInteger.ONE;
         }
+        BigInteger a = BigInteger.ZERO;
+        BigInteger b = BigInteger.ONE;
+        for (int i = 2; i <= n; i++) {
+            BigInteger temp = a.add(b); 
+            a = b;                      
+            b = temp;                   
+        }
+        return b; 
+    }
+
     public static void main(String[] args) {
         System.out.println(countOccurrences(2, arrA));
         System.out.println(IntArrayToString(reverseArray(arrA)));;
         System.out.println(sumGrid(twoArr));
-        System.out.println(fib(3));
+        System.out.println(fib(50));
     }
 }

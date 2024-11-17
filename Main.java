@@ -5,5 +5,6 @@ public class Main {
 		System.out.println(PracticeProblems.countOccurrences(3, arr));
         System.out.println(PracticeProblems.IntArrayToString(PracticeProblems.reverseArray(arr)));;
         System.out.println(PracticeProblems.sumGrid(twoArr));
+        System.out.println(PracticeProblems.fib(50));
 	}
 }
