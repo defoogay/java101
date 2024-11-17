@@ -1,8 +1,6 @@
 public class Main {
-    static int num(int x) {
-            return x + 1;
-        }
-    public static void main(String[] args) {
-        System.out.println(num(10));
-    }
+	public static void main(String[] args) {
+		int[] arr = {4, 3, 2, 8, 3};
+		System.out.println(PracticeProblems.countOccurrences(3, arr));
+	}
 }
