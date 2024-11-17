@@ -28,25 +28,42 @@ public class PracticeProblems {
             }
             return newArr;
         }
-        static String IntArrayToString(int[] arr) {
+        public static String IntArrayToString(int[] arr) {
             String Result = "Array: | ";
             for (int i = 0; i < arr.length; i++){
                 Result = Result + arr[i] + " | ";
             }
             return Result;
         }
-        static int sumGrid(int[][] arr) {
+        public static int sumGrid(int[][] arr) {
             int numberHolder = 0;
-            int greaterNumber = 0;
-            for(int i = 0; i < arr.length; i++) {
-                greaterNumber += arr[i];
+            for(int i = 2; i < arr.length; i++) {
                 for(int x = 0; x < arr.length; x++) {
                     numberHolder += arr[i][x];
                 }
             }
+            return numberHolder;
+        }
+        public static int fib(int x) {
+            if(x == 0) {
+                return 0;
+            }
+            else if(x == 1) {
+                return 1;
+            }
+            int prevNum1 = 0;
+            int prevNum2 = 1;
+            for(int i = 2; i <= x; i++) {
+                int fibNum = prevNum1 + prevNum2;
+                prevNum1 = prevNum2;
+                prevNum2 = fibNum;
+            }
+            return prevNum2;
         }
     public static void main(String[] args) {
         System.out.println(countOccurrences(2, arrA));
         System.out.println(IntArrayToString(reverseArray(arrA)));;
+        System.out.println(sumGrid(twoArr));
+        System.out.println(fib(3));
     }
 }
